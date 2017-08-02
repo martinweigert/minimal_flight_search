@@ -1,0 +1,27 @@
+A minimal flight search engine.
+
+WHY:
+I create this mostly as a part of my ongoing project to learn Python, and as a fun exercise. However, I also felt the need
+for a no frills flight search engine that I can run locally and that shows me the booking class for each fare directly in the results.
+
+FOR WHOM:
+This minmal flight searche engine might be of interest for people who search flights on an ongoing basis (as procrastination or because they enjoy "preparing" and researching for an upcoming booking, without immediate intent to purchase.
+Unlike any other available flight search engine that I know of, this search engine immediately shows the booking class for each fare (ITA Matrix almost does this but still requires a click on the fare).
+Note that you cannot book flights through this script. Once you have seen a good fare, you'll have to book it elsewhere.
+
+WHAT YOU NEED IN ORDER TO USE IT.
+You need to know how to run a Python script locally on your computer through a shell.
+
+Furthermore, the flight fares are obtained through Google's QPX Express API. In order to be able to search flights with 
+this programm, you have to get your own API key and enter it at the top of the .py file. 
+To get your key, follow the instructions presented here: https://developers.google.com/qpx-express/v1/prereqs
+Note that acquiring an API key is free. However, with the free key, you can only send 50 queries a day. You will not have to add
+payment details when creating the key, so you won't risk getting charged. However, in case you might have entered payment details for
+previous projects or API keys, charging my happen. SO WHATEVER YOU DO, IT'S AT YOUR OWN RISK.
+
+Once you have acquired an API key and added it your local version of the script, make sure to not expose the key to others.
+
+###
+
+I might keep improving this script, or I might not. If you have wuestions or ideas, you find my contact details at the bottom of http://martinweigert.com.
+Created by Martin Weigert as a part of an ongoing "learning to code" project, in 2017.
