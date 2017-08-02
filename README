@@ -5,7 +5,7 @@ I create this mostly as a part of my ongoing project to learn Python, and as a f
 
 FOR WHOM:
 This minmal flight searche engine might be of interest for people who search flights on an ongoing basis (as procrastination or because they enjoy "preparing" and researching for an upcoming booking, without immediate intent to purchase).
-Unlike any other available flight search engine that I know of, this search engine immediately shows the booking class for each fare (ITA Matrix almost does this but still requires a click on the fare).
+Unlike any other available flight search engine that I know of, this search engine immediately shows the fare class for each fare (ITA Matrix almost does this but still requires a click on the fare).
 Note that you cannot book flights through this script. Once you have seen a good fare, you'll have to book it elsewhere.
 
 WHAT YOU NEED IN ORDER TO USE IT:
