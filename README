@@ -13,7 +13,7 @@ You need to know how to run a Python script locally on your computer through a s
 
 Furthermore, the flight fares are obtained through Google's QPX Express API. In order to be able to search flights with this programm, you have to get your own API key and enter it with a text editor at the top of the .py file. 
 To get your key, follow the instructions presented here: https://developers.google.com/qpx-express/v1/prereqs
-Note that acquiring an API key is free. However, with the free key, you can only send 50 queries a day. You will not have to add payment details when creating the key, so you won't risk getting charged. 
+Note that acquiring an API key is free. However, with the free key, you can only send 50 queries a day. You will not have to add payment details when creating the key, so you won't risk getting charged. If you have reached the daily limit, access to the API simply will be blocked for the rest of the day.
 However, in case you might have entered payment details for previous projects or API keys, charges may occur. SO WHATEVER YOU DO, IT'S AT YOUR OWN RISK.
 
 Once you have acquired an API key and added it your local version of the script, make sure to not expose the key to others.
