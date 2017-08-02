@@ -9,7 +9,7 @@ This minmal flight searche engine might be of interest for people who search fli
 Unlike any other available flight search engine that I know of, this search engine immediately shows the booking class for each fare (ITA Matrix almost does this but still requires a click on the fare).
 Note that you cannot book flights through this script. Once you have seen a good fare, you'll have to book it elsewhere.
 
-WHAT YOU NEED IN ORDER TO USE IT.
+WHAT YOU NEED IN ORDER TO USE IT:
 You need to know how to run a Python script locally on your computer through a shell.
 
 Furthermore, the flight fares are obtained through Google's QPX Express API. In order to be able to search flights with 
@@ -20,6 +20,10 @@ payment details when creating the key, so you won't risk getting charged. Howeve
 previous projects or API keys, charging my happen. SO WHATEVER YOU DO, IT'S AT YOUR OWN RISK.
 
 Once you have acquired an API key and added it your local version of the script, make sure to not expose the key to others.
+
+HOW TO USE IT:
+Just run the .py file with Python in a local shell and follow the instructions. If you open the .py file with a text editor,
+you see 3 variables that you can change in order to refine the results: Number_results, alliance, cabin.
 
 ###
 
