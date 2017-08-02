@@ -11,6 +11,7 @@ headers = {'content-type': 'application/json'}
 number_results = 10 # adjust if you like: Number of alternatives shown.
 alliance = "STAR ALLIANCE" # adjust if you like. Options: "STAR ALLIANCE", "ONEWORLD", "SKYTEAM" or "" for any.
 cabin = "" # adjust if you like. Options: "COACH", "PREMIUM_COACH", "BUSINESS" or "" for any.
+country = "DE" # adjust if you like. Depending on the sale country, the currency (and possibly even the price) will change. 
 
 def start():
     if key == "ENTER YOUR KEY HERE":
@@ -87,7 +88,7 @@ def get_flight_data(outbound_flight,return_flight,date1,date2):
             "seniorCount": 0
             },
             "solutions": number_results,
-            "saleCountry": "DE",
+            "saleCountry": country,
             "refundable": "false"
             }
             }
@@ -122,7 +123,7 @@ def get_flight_data(outbound_flight,return_flight,date1,date2):
             "seniorCount": 0
             },
             "solutions": number_results,
-            "saleCountry": "DE",
+            "saleCountry": country,
             "refundable": "false"
             }
             }
