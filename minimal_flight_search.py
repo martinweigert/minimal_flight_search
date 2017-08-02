@@ -11,7 +11,7 @@ headers = {'content-type': 'application/json'}
 number_results = 10 # adjust if you like: Number of alternatives shown.
 alliance = "STAR ALLIANCE" # adjust if you like. Options: "STAR ALLIANCE", "ONEWORLD", "SKYTEAM" or "" for any.
 cabin = "" # adjust if you like. Options: "COACH", "PREMIUM_COACH", "BUSINESS" or "" for any.
-country = "DE" # adjust if you like. Depending on the sale country, the currency (and possibly even the price) will change. 
+country = "DE" # adjust if you like. Depending on the sale country, the currency (and possibly even the price) will change.
 
 def start():
     if key == "ENTER YOUR KEY HERE":
@@ -21,7 +21,7 @@ def start():
     print("### MINIMAL FLIGHT SEARCH ENGINE ###")
     print("Welcome, travel hacker.")
     print("")
-    print("When using the search, it is important that you make your entries following the suggested form. \nIf you get repeated error messages, you might have exceeded the daily query limit for the API. Try again tomrrow.")
+    print("When using the search, it is important that you make your entries following the suggested form. \nIf you get repeated error messages, you might have exceeded the daily query limit for the API. Try again tomorrow.")
     print("")
     enter_flight1()
 
