@@ -1,7 +1,7 @@
 A minimal flight search engine.
 
 WHY:
-I create this mostly as a part of my ongoing project to learn Python, and as a fun exercise. However, I also felt the need for a no frills flight search engine that I can run locally and that shows me the booking class for each fare directly in the results.
+I created this mostly as a part of my ongoing project to learn Python, and as a fun exercise. However, I also felt the need for a no frills flight search engine that I can run locally and that shows me the booking class for each fare directly in the results.
 
 FOR WHOM:
 This minmal flight searche engine might be of interest for people who search flights on an ongoing basis (as procrastination or because they enjoy "preparing" and researching for an upcoming booking, without immediate intent to purchase).
