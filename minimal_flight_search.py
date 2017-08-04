@@ -2,6 +2,8 @@ import requests
 import json
 import sys
 import time
+import datetime
+
 
 
 key = "ENTER YOUR KEY HERE" # See readme file for instructions. https://github.com/martinweigert/minimal_flight_search/blob/master/README
@@ -15,7 +17,7 @@ country = "DE" # adjust if you like. Depending on the sale country, the currency
 
 def start():
     if key == "ENTER YOUR KEY HERE":
-        print("You cannot use this search engine without getting your own API Key. \nOpen the .py file with a text editor and read the instructions at the top.")
+        print("You cannot use this flight search engine without getting your own API Key. \nSee readme file for instructions. https://github.com/martinweigert/minimal_flight_search/blob/master/README")
         sys.exit()
     print("")
     print("### MINIMAL FLIGHT SEARCH ENGINE ###")
@@ -28,39 +30,64 @@ def start():
 def enter_flight1():
     while True:
         flight1 = input("For the outbound flight, enter airport codes for origin and destination, \nseparated by '-', e.g. TXL-SFO: ")
-        for letter in flight1:
-            if letter.isdigit():
-                print("Please follow the pattern 'TXL-ARN'. All other types of entries will cause an error.")
-                enter_flight1()
-            else:
-                enter_flight2(flight1)
+        if flight1[0:3].isalpha() and flight1[4:].isalpha() and flight1[3] == "-" and len(flight1) == 7:
+            enter_flight2(flight1)
+        else:
+            print("ERROR")
+            print("Please type according to the form 'TXL-ARN'. Try again.")
 
 def enter_flight2(flight1):
     while True:
         flight2 = input("For the return flight, enter airport codes for origin and destination, \nseparated by '-', e.g. SFO-TXL. For one-way, press enter: ")
         if len(flight2) == 0:
             flight2 = "ow"
-            dept_date(flight1,flight2)
+            print("One-way flight chosen.")
+            enter_dept_date(flight1,flight2)
         elif len(flight2) > 0:
-            for letter in flight2:
-                if letter.isdigit():
-                    print("Please follow the pattern 'ARN-TXL'. All other types of entries will cause an error.")
-                    enter_flight2(flight1)
-                else:
-                    dept_date(flight1,flight2)
+            if flight2[0:3].isalpha() and flight2[4:].isalpha() and flight2[3] == "-" and len(flight2) == 7:
+                enter_dept_date(flight1,flight2)
+            else:
+                print("ERROR")
+                print("Please type according to the form 'TXL-ARN'. Try again.")
+                enter_flight2(flight1)
 
-
-def dept_date(flight1,flight2):
-    dept_date = input("Enter departure date, following this pattern: 2017-12-24: ")
-    if flight2 == "ow":
-        return_date = "ow"
-        get_flight_data(flight1,flight2,dept_date,return_date)
+def enter_dept_date(flight1,flight2):
+    dept_date = input("Enter departure date, following this form: 2017-12-24: ")
+    try:
+        datetime.datetime.strptime(dept_date, "%Y-%m-%d")
+    except ValueError:
+        print("ERROR")
+        print("This is not a valid format. Please try again.")
+        enter_dept_date(flight1,flight2)
+    dept_date_unix = time.mktime(datetime.datetime.strptime(dept_date, "%Y-%m-%d").timetuple())
+    now_time = int(time.time())
+    if now_time > int(dept_date_unix):
+        print("ERROR")
+        print("The date you entered is in the past. Please try again.")
+        enter_dept_date(flight1,flight2)
     else:
-        enter_return_date(flight1,flight2,dept_date)
+        if flight2 == "ow":
+            return_date = "ow"
+            get_flight_data(flight1,flight2,dept_date,return_date)
+        else:
+            enter_return_date(flight1,flight2,dept_date)
 
 def enter_return_date(flight1,flight2,dept_date):
-    return_date = input("Enter return date, following this pattern: 2017-12-31: ")
-    get_flight_data(flight1,flight2,dept_date,return_date)
+    return_date = input("Enter return date, following this form: 2017-12-31: ")
+    try:
+        datetime.datetime.strptime(return_date, "%Y-%m-%d")
+    except ValueError:
+        print("ERROR")
+        print("This is not a valid format. Please try again.")
+        enter_return_date(flight1,flight2,dept_date)
+    return_date_unix = time.mktime(datetime.datetime.strptime(return_date, "%Y-%m-%d").timetuple())
+    dept_date_unix = time.mktime(datetime.datetime.strptime(dept_date, "%Y-%m-%d").timetuple())
+    if return_date < dept_date:
+        print("ERROR")
+        print("The date you entered is before the date of the first flight. Please try again.")
+        enter_return_date(flight1,flight2,dept_date)
+    else:
+        get_flight_data(flight1,flight2,dept_date,return_date)
 
 
 def get_flight_data(outbound_flight,return_flight,date1,date2):
