@@ -11,7 +11,7 @@ key = "ENTER YOUR KEY HERE" # See readme file for instructions. https://github.c
 headers = {'content-type': 'application/json'}
 
 number_results = 10 # adjust if you like: Number of alternatives shown.
-alliance = "STAR ALLIANCE" # adjust if you like. Options: "STAR ALLIANCE", "ONEWORLD", "SKYTEAM" or "" for any.
+alliance = "" # adjust if you like. Options: "STAR ALLIANCE", "ONEWORLD", "SKYTEAM" or "" for any.
 cabin = "" # adjust if you like. Options: "COACH", "PREMIUM_COACH", "BUSINESS" or "" for any.
 country = "DE" # adjust if you like. Depending on the sale country, the currency (and possibly even the price) will change.
 
